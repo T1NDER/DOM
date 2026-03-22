@@ -1,8 +1,8 @@
-# Перемещение элемента мышью
+# Перемещение элемента
 
 ![Build Status](https://github.com/T1NDER/DOM/actions/workflows/deploy.yml/badge.svg)
 
-🔗 [GitHub Pages](https://T1NDER.github.io/DOM/)
+🔗 [GitHub Pages](https://t1nder.github.io/DOM/)
 
 
 ## Установка
