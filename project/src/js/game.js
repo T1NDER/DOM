@@ -1,11 +1,19 @@
 import characterImg from "../images/image.png";
 
 const GRID_SIZE = 4;
+const MOVE_INTERVAL = 1500;
+
 let character = null;
 let currentCellIndex = -1;
+let intervalId;
 
 function createGrid() {
   const grid = document.getElementById("grid");
+
+  if (!grid) {
+    throw new Error('Элемент с id="grid" не найден');
+  }
+
   grid.innerHTML = "";
 
   for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
@@ -52,5 +60,12 @@ export function initGame() {
   const startIndex = Math.floor(Math.random() * GRID_SIZE * GRID_SIZE);
   placeCharacterInCell(startIndex);
 
-  setInterval(moveCharacter, 1500);
+  intervalId = setInterval(moveCharacter, MOVE_INTERVAL);
+}
+
+export function stopGame() {
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
 }
